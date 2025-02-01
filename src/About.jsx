@@ -1,6 +1,5 @@
 import React from "react";
-import hero from "./assets/logo.jpg";
-
+import aboutImage from "./assets/about.png";
 export default function About() {
   return (
     <section>
@@ -16,8 +15,9 @@ export default function About() {
             Reserve a Table
           </a> */}
         </div>
-
-        <img className="hero-image" src={hero} alt="Hero image" />
+        <div className="about-image-box">
+          <img className="about-image" src={aboutImage} alt="Hero image" />
+        </div>
       </div>
     </section>
   );

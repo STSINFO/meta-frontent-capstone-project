@@ -1,7 +1,6 @@
 import React from "react";
 import greek from "../assets/greek-salad.jpg";
 import bruchetta from "../assets/Bruchetta.jpg";
-// import lemonDessert from "../assets/greek-salad.jpg";
 import Card from "../Card";
 
 export default function Highlights() {
