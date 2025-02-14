@@ -3,7 +3,7 @@ import logo from "../assets/logo.jpg";
 
 export default function Nav() {
   return (
-    <nav className="main-nav inner-container">
+    <nav className="main-nav outer-container inner-container">
       <a href="#">
         <img className="logo" src={logo} alt="logo" />
       </a>
