@@ -2,15 +2,14 @@ import React from "react";
 import Highlights from "./Highlights";
 import About from "../About";
 import Testimonials from "../Testimonials";
-import BookingPage from "../BookingPage";
-
+import Hero from "./Hero";
 export default function Main() {
   return (
     <main className="outer-container">
-      {/* <Highlights />
+      <Hero />
+      <Highlights />
       <Testimonials />
-      <About /> */}
-      <BookingPage />
+      <About />
     </main>
   );
 }
