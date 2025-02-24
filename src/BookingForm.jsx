@@ -1,7 +1,12 @@
 import React from "react";
 import image from "./assets/background4.jpg";
+import { useNavigate } from "react-router-dom";
 
 export default function BookingForm() {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/reservations/confirm");
+  };
   return (
     <section className="booking">
       <form action="#" className="form-container">
@@ -42,7 +47,7 @@ export default function BookingForm() {
           </select>
         </div>
 
-        <button>Reserver a Table</button>
+        <button onClick={handleClick}>Reserver a Table</button>
       </form>
       <div className="image-box"></div>
     </section>

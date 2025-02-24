@@ -375,7 +375,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 4.8rem;
-  margin: 9.6rem 0;
+  margin: 4.8rem 0;
 }
 
 .form-2-cols {
@@ -389,14 +389,14 @@ body {
   align-items: center;
   gap: 1.6rem;
   font-size: 1.6rem;
-  color: white;
+  color: #fff;
 }
 
 .control select,
 .control input {
   flex: 1;
   font-size: 1.6rem;
-  color: black;
+  color: #333;
   padding: 0.8rem;
   font-weight: 500;
 }
@@ -432,4 +432,35 @@ body {
     url("./assets/background5.jpg");
   background-position: center;
   background-size: cover;
+}
+
+.confirm .form-container {
+  gap: 1.6rem;
+}
+
+.confirm .control {
+  flex-direction: column;
+  align-items: start;
+  gap: 0.8rem;
+}
+
+.confirm .control input,
+.confirm .control textarea {
+  width: 100%;
+}
+
+.confirm .control textarea {
+  height: 10rem;
+}
+
+.congrats {
+  margin-top: 9.6rem;
+  margin-bottom: 9.6rem;
+}
+
+.congrats p {
+  font-size: 1.8rem;
+  margin-top: 2.4rem;
+  font-weight: 600;
+  color: #555;
 }

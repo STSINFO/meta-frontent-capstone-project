@@ -5,11 +5,11 @@ import Testimonials from "../Testimonials";
 import Hero from "./Hero";
 export default function Main() {
   return (
-    <main className="outer-container">
+    <>
       <Hero />
       <Highlights />
       <Testimonials />
       <About />
-    </main>
+    </>
   );
 }
