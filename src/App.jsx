@@ -6,6 +6,7 @@ import MainLayout from "./Components/MainLayout";
 import BookingForm from "./BookingForm";
 import Confirm from "./Confirm";
 import Congrats from "./Congrats";
+import Login from "./Login";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/about" element={<BookingPage />} />
           <Route path="/menu" element={<BookingPage />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/reservations" element={<BookingPage />}>
             <Route index element={<BookingForm />} />
             <Route path="confirm" element={<Confirm />} />

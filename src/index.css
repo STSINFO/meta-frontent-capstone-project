@@ -445,7 +445,8 @@ body {
 }
 
 .confirm .control input,
-.confirm .control textarea {
+.confirm .control textarea,
+.confirm .control select {
   width: 100%;
 }
 
@@ -463,4 +464,93 @@ body {
   margin-top: 2.4rem;
   font-weight: 600;
   color: #555;
+}
+
+/* Login */
+.login {
+  padding: 9.6rem 0;
+  margin: 0 auto;
+  width: 130rem;
+  background-color: #495e57;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginContainer {
+  background-color: #edefee;
+  padding: 4.8rem 3.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4.8rem;
+  border-radius: 1.6rem;
+  flex: 1;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  color: red;
+}
+
+.wrapper .error {
+  color: #f4ce14;
+  font-weight: 600;
+}
+
+.loginContainer form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.loginContainer form input,
+.loginContainer form select {
+  font-size: 1.6rem;
+  border: 3px solid #495e57;
+  padding: 1.6rem 0 1.6rem 1.6rem;
+  border-radius: 1.6rem;
+  border: none;
+  background-color: white;
+}
+.loginContainer form button {
+  background-color: #f4ce14;
+  border: none;
+  padding: 1.6rem 3.2rem;
+  border-radius: 1.6rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-top: 1.6rem;
+  transition: all 0.3s;
+  width: 39rem;
+  color: #495e57;
+}
+
+.loginContainer form button:hover {
+  background-color: hsl(50, 91%, 42%);
+}
+
+.loginContainer img {
+  width: 8.6rem;
+  height: 8rem;
+  border-radius: 50%;
+  border: 4px solid #495e57;
+  margin-bottom: 1.6rem;
+}
+
+.loginContainer div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.loginContainer div h3 {
+  color: #495e57;
+  font-size: 2rem;
+  font-weight: 600;
 }

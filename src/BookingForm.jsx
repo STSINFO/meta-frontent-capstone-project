@@ -1,53 +1,114 @@
-import React from "react";
-import image from "./assets/background4.jpg";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useOutletContext } from "react-router-dom";
 
 export default function BookingForm() {
+  const { formik } = useOutletContext();
   const navigate = useNavigate();
+
+  const [initializeTimes, setInitializeTimes] = useState([]);
+
+  useEffect(() => {
+    fetch(
+      "https://raw.githubusercontent.com/courseraap/capstone/main/api.js"
+    ).then((res) => console.log(res.json));
+    // setInitializeTimes(fetchAPI(date));
+  }, []);
+
   const handleClick = () => {
+    formik.handleSubmit;
     navigate("/reservations/confirm");
   };
+
   return (
-    <section className="booking">
+    <section className="booking confirm">
       <form action="#" className="form-container">
         <div className="form-2-cols">
-          <div className="radio-control">
-            <label htmlFor="standard">Standard</label>
-            <input type="radio" name="seating" id="standard" />
+          <div className="wrapper">
+            <div className="control">
+              <label htmlFor="date">Date</label>
+              <input
+                type="date"
+                placeholder="date"
+                id="date"
+                name="date"
+                value={formik.values.date}
+                onBlur={formik.hanleBlur}
+                onChange={formik.handleChange}
+              />
+            </div>
+            {formik.errors.date && (
+              <small className="error">{formik.errors.date}</small>
+            )}
           </div>
-          <div className="radio-control">
-            <label htmlFor="outside">Outside</label>
-            <input type="radio" name="seating" id="outside" />
+          <div className="wrapper">
+            <div className="control">
+              <label htmlFor="time">Time</label>
+              <select
+                name="time"
+                id="time"
+                value={formik.values.time}
+                onBlur={formik.hanleBlur}
+                onChange={formik.handleChange}
+              >
+                <option value="">Time</option>
+                {initializeTimes.map((t, i) => (
+                  <option key={i}>{t}</option>
+                ))}
+              </select>
+            </div>
+            {formik.errors.time && (
+              <small className="error">{formik.errors.time}</small>
+            )}
           </div>
         </div>
-        <div className="form-2-cols">
+        <div className="wrapper">
           <div className="control">
-            <label htmlFor="date">Date</label>
-            <input type="date" name="date" id="date" />
+            <label htmlFor="numberOfDiners">Number of Diners</label>
+            <input
+              type="number"
+              id="numberOfDiners"
+              name="numberOfDiners"
+              value={formik.values.numberOfDiners}
+              onBlur={formik.hanleBlur}
+              onChange={formik.handleChange}
+            />
           </div>
+          {formik.errors.numberOfDiners && (
+            <small className="error">{formik.errors.numberOfDiners}</small>
+          )}
+        </div>
+        <div className="wrapper">
           <div className="control">
-            <label htmlFor="date">Time</label>
-            <select name="time" id="time">
-              <option value="">Time</option>
-              <option value="17:00">17:00</option>
-              <option value="18:00">18:00</option>
+            <label htmlFor="occasion">Occasion</label>
+            <select
+              name="occasion"
+              id="occasion"
+              value={formik.values.occasion}
+              onBlur={formik.hanleBlur}
+              onChange={formik.handleChange}
+            >
+              <option value="">occasion</option>
+              <option value="birthday">Birthday</option>
+              <option value="anniversary">Anniversary</option>
             </select>
           </div>
-        </div>
-        <div className="control">
-          <label htmlFor="number">Number of Diners</label>
-          <input type="number" min="1" max="10" id="number" />
-        </div>
-        <div className="control">
-          <label htmlFor="occasion">Occasion</label>
-          <select name="occasion" id="occasion">
-            <option value="">Occasion</option>
-            <option value="birthday">Birthday</option>
-            <option value="anniversary">Anniversary</option>
-          </select>
+          {formik.errors.occasion && (
+            <small className="error">{formik.errors.time}</small>
+          )}
         </div>
 
-        <button onClick={handleClick}>Reserver a Table</button>
+        <button
+          disabled={
+            formik.errors.date ||
+            formik.errors.time ||
+            formik.errors.numberOfDiners ||
+            formik.errors.occasion
+          }
+          type="submit"
+          onClick={handleClick}
+        >
+          Let's go
+        </button>
       </form>
       <div className="image-box"></div>
     </section>
